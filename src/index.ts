@@ -7,9 +7,10 @@ import { server } from './app';
 import log from './logger';
 
 function startServer() {
-  const PORT = process.env.PORT as string || 8080;
-  server.listen(PORT, () => {
-    log.info(`Server running 🤖🚀 at http://localhost:${PORT}/`);
+  const PORT = process.env.PORT || 8080;
+
+  server.listen(PORT, "0.0.0.0", () => {
+    log.info(`Server running 🤖🚀 at http://0.0.0.0:${PORT}/`);
   });
 }
 
